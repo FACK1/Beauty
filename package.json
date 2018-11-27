@@ -4,10 +4,10 @@
   "description": "Beauty : An application to show all Makeup products to users, allows users to search any products they want  and display its information",
   "main": "index.js",
   "scripts": {
-    "test": "tape src/test.js | tap-spec",
+    "test": "tape ./src/test.js | tap-spec",
     "lint": "eslint src/handler.js",
     "lint:fix": "npm run lint -- --fix",
-    "nodemon" : "nodemon src/server.js"
+    "nodemon": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",

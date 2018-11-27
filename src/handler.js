@@ -23,6 +23,7 @@ const publicHandler = (request, response) => {
     css: 'text/css',
     js: 'application/js',
     jpg: 'image/jpg',
+    png: 'image/png',
     ico: 'image/x-ico',
   };
 
