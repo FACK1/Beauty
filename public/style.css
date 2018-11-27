@@ -1,0 +1,69 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+header{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width:100%
+  /* height:30vh; */
+  text-align: center;
+  /* padding:20px; */
+}
+
+h1{
+  font-size:40px;
+  font-family: 'Tangerine', cursive;;
+  color:#CF4182;
+  margin-top: 15px;
+}
+
+h2{
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  color:#7C3354;
+  margin-top: 15px;
+}
+
+.beauty-img{
+  width:40%;
+  display: block;
+  margin:auto;
+  margin-top: 15px;
+  /* padding:20px; */
+}
+
+.form-div, form {
+  display:flex;
+  justify-content: center;
+  flex-direction:row;
+  width:100%;
+  margin:auto;
+  margin-top: 15px;
+}
+
+
+.input-field{
+  width:60%;
+  border: 2px solid #EC4C94;
+  padding:10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  margin-right: 5px;
+}
+
+.go-button{
+  width:20%;
+  border: 2px solid #EC4C94;
+  border-radius: 5px;
+  display: inline;
+  color:#7C3354;
+  background-color:white;
+  padding:10px;
+  padding:10px;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+}
