@@ -11,10 +11,11 @@
     <header>
       <h1>Beauty Cosmetics</h1>
       <h2>Find your favorite beauty products!</h2>
-      <img src="./assets/beauty.png" class="beauty-img">
+      <img src="./assets/beauty.png" class="beauty-img" alt="logo">
       <div class="form-div">
-        <form>
-          <input type="text" placeholder ="Enter a beauty product..." class="input-field" required>
+        <form action="/search/" method="get">
+          <label for="search-bar"></label>
+          <input id="search-bar" type="text" placeholder ="Enter a beauty product..." class="input-field" required>
           <button class="go-button">Go!</button>
         </form>
       </div>

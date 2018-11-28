@@ -48,13 +48,12 @@ const searchHandler = (request, response) => {
     response.writeHead(404, { 'Content-Type': 'text/plain' }); // we need to handle the error input
     response.end('error');
   } else {
-    const result = requestModule(value);
-    const convertedData = JSON.stringify(result);
-    console.log({ result });
-
-    console.log({ convertedData });
+    // const result = requestModule(value);
+    // const convertedData = JSON.stringify(String(result));
     // response.writeHead(200, { 'Content-Type': 'application/json' });
-    // response.end(convertedData);
+    // response.end(result);
+    // console.log("this",result)
+
   }
 };
 
