@@ -1,0 +1,110 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+header{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width:100%;
+  /* height:30vh; */
+  text-align: center;
+  /* padding:20px; */
+}
+
+.title-hd{
+  font-size:40px;
+  font-family: 'Tangerine', cursive;
+  color:#CF4182;
+  margin-top: 15px;
+  width:100%;
+}
+
+.sub-title-hd{
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  color:#7C3354;
+  margin-top: 15px;
+  width:100%;
+}
+
+.beauty-img{
+  width:40%;
+  display: block;
+  margin:auto;
+  margin-top: 15px;
+  /* padding:20px; */
+}
+
+.form-div, form {
+  display:flex;
+  justify-content: center;
+  flex-direction:row;
+  width:100%;
+  margin:auto;
+  margin-top: 15px;
+}
+
+
+.input-field{
+  width:60%;
+  border: 2px solid #EC4C94;
+  padding:10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  margin-right: 5px;
+}
+
+.go-button{
+  width:20%;
+  border: 2px solid #EC4C94;
+  border-radius: 5px;
+  display: inline;
+  color:#7C3354;
+  background-color:white;
+  padding:10px;
+  padding:10px;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+}
+
+/*header ends here =============================================*/
+
+/*section starts here ========================================= */
+
+.container {
+  width:100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  margin-top: 25px;
+}
+
+.container-div {
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+  width:40%;
+  margin: 2%;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  border:#7C3354 3px solid;
+  padding: 5px;
+}
+
+.div-hd1 {
+  font-size: 20px;
+  color:#7C3354;
+}
+
+.div-hd2 {
+  font-size: 16px;
+  color:#EC4C94;
+}
+
+.product-img {
+  width:100px;
+  height:120px;
+}
