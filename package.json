@@ -8,7 +8,8 @@
     "lint": "eslint src/handler.js",
     "lint:fix": "npm run lint -- --fix",
     "nodemon": "nodemon src/server.js",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "istanbul": "istanbul cover tape ./src/test.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
   "devDependencies": {
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.14.0",
+    "istanbul": "^0.4.5"
   }
 }
