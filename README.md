@@ -2,7 +2,7 @@
 # Beauty
 Beauty : An application to show all Makeup products to users, allows users to search any products they want and display its information .
 
-# Userjourney :
+# User journey :
   All Girls needs to see Makeups products and see products of some brands , so our app allows to girls enter the name of product like : **eyeliner** , then click on **Go!** , out website will show to her the name of product with differnt products brands, price, and images to this product .  
 
 # Website Link: https://beautypro.herokuapp.com/
