@@ -1,38 +1,38 @@
 {
-  "name": "beauty",
-  "version": "1.0.0",
-  "description": "Beauty : An application to show all Makeup products to users, allows users to search any products they want  and display its information",
-  "main": "index.js",
-  "scripts": {
-    "test": "tape ./src/test.js | tap-spec",
-    "lint": "eslint src/handler.js",
-    "lint:fix": "npm run lint -- --fix",
-    "nodemon": "nodemon src/server.js",
-    "start": "node src/server.js",
-    "istanbul": "istanbul cover tape ./src/test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FACK1/Beauty.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/FACK1/Beauty/issues"
-  },
-  "homepage": "https://github.com/FACK1/Beauty#readme",
-  "dependencies": {
-    "dotenv": "^6.1.0",
-    "nodemon": "^1.18.6",
-    "request": "^2.88.0",
-    "supertest": "^3.3.0",
-    "tap-spec": "^5.0.0",
-    "tape": "^4.9.1"
-  },
-  "devDependencies": {
-    "eslint": "^5.9.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "istanbul": "^0.4.5"
-  }
+   "name": "beauty",
+   "version": "1.0.0",
+   "description": "Beauty : An application to show all Makeup products to users, allows users to search any products they want  and display its information",
+   "main": "index.js",
+   "scripts": {
+      "test": "tape ./src/test.js | tap-spec",
+      "lint": "eslint src/*.js",
+      "lint:fix": "npm run lint -- --fix",
+      "nodemon": "nodemon src/server.js",
+      "start": "node src/server.js",
+      "istanbul": "istanbul cover tape ./src/test.js"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/FACK1/Beauty.git"
+   },
+   "author": "",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/FACK1/Beauty/issues"
+   },
+   "homepage": "https://github.com/FACK1/Beauty#readme",
+   "dependencies": {
+      "dotenv": "^6.1.0",
+      "nodemon": "^1.18.6",
+      "request": "^2.88.0",
+      "supertest": "^3.3.0",
+      "tap-spec": "^5.0.0",
+      "tape": "^4.9.1"
+   },
+   "devDependencies": {
+      "eslint": "^5.9.0",
+      "eslint-config-airbnb-base": "^13.1.0",
+      "eslint-plugin-import": "^2.14.0",
+      "istanbul": "^0.4.5"
+   }
 }

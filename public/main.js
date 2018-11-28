@@ -1,144 +1,88 @@
-function search() {
 var inp = document.getElementById("search-bar");
 var btn_search = document.getElementById('btn-search');
-var products = document.createElement('div');
-var container = document.getElementById('container');
 var mydiv = document.getElementById("test");
 
+function search() {
 	btn_search.addEventListener("click", function (e) {
-		// removeList();
 
-	var makeupIndex = inp.value;
-    console.log('dddd',makeupIndex);
+		removeProducts();
 
-		if (makeupIndex) {
+		var makeupIndex = inp.value;
+
+		if (makeupIndex === "") {
+
+			alert("Type Something!");
+		} else {
+
+			makeupIndex = searchCases(makeupIndex);
+
 			fetch('/search/' + makeupIndex)
 				.then(function (response) {
 					return response.json();
 				})
 				.then(function (data) {
 
+					if (data.length <= 0) {
+						alert("Sorry, No Match Found");
+						//clear search box
+						inp.value = '';
+					} else {
+						viewProducts(data);
+					}
 
-// container.replaceChild(todoListNode, container.firstChild);
-
-      for (var i = 0; i < data.length; i++) {
-    //    var images = String(data[i].image_link))
-      //  console.log(images);
-        //
-
-        // 					var createresult = function (data) {
-        // 						//start add product:
-//         var test = document.createElement('DIV')
-//         test.setAttribute("class", "me");
-// mydiv.appendChild(test);
-
-        						var product = document.createElement('div');
-        						product.setAttribute('class', 'container-div');
-                    mydiv.appendChild(product);
-        						var brand = document.createElement('h1');
-        						brand.setAttribute('class', 'div-hd1');
-        						brand.innerText = data[i].brand;
-        						var name = document.createElement('h2');
-        						name.setAttribute('class', 'div-hd2');
-        						name.innerText = data[i].name;
-        						var image = document.createElement('IMG');
-        						image.setAttribute('class', 'product-img');
-        					  image.src = data[i].image;
-        						var price = document.createElement('h5');
-        						price.setAttribute('class', 'div-hd5');
-        						price.innerText = data[i].price + data[i].currency;
-        						product.appendChild(brand);
-        						product.appendChild(name);
-        						product.appendChild(image);
-        						product.appendChild(price);
-        					};
-
-
-
-
-
-
-
-
-
-        //end
+				}).catch(function (err) {
+					return console.log(err)
 				})
+
 		}
 	})
 }
 
-// function viewList(array) {
-// 	var container = document.getElementById("autocomplete");
-// 	//removeList();
-// 	document.getElementById("autocomplete").innerHTML="";
-// 	// container.setAttribute("id", "autocomplete-list");
-// 	inp.parentNode.appendChild(container);
-// 	console.log(array.length);
-// 	for (i = 0; i < array.length; i++) {
-// 		var item = document.createElement("option");
-// 		item.setAttribute("class", "autoComplete-item");
-// 		item.innerHTML = array[i];
-// 		container.appendChild(item);
-// 	}
-// }
-//
-// function removeList() {
-// 	if (document.getElementById("autocomplete")) {
-// 	 var list =	document.getElementById("autocomplete");
-//     while(list.firstChild){
-//     		list.firstChild.remove();
-// 		}
-// 	}
-// }
+function viewProducts(array) {
 
+	array.map(element => {
+
+		var product = document.createElement('div');
+		product.setAttribute('class', 'container-div');
+		mydiv.appendChild(product);
+		var brand = document.createElement('h1');
+		brand.setAttribute('class', 'div-hd1');
+		brand.innerText = element.brand;
+		var name = document.createElement('h2');
+		name.setAttribute('class', 'div-hd2');
+		name.innerText = element.name;
+		var image = document.createElement('IMG');
+		image.setAttribute('class', 'product-img');
+		image.src = element.image;
+		image.alt = "product image"
+		var price = document.createElement('h5');
+		price.setAttribute('class', 'div-hd5');
+		price.innerText = element.price + element.currency;
+		product.appendChild(brand);
+		product.appendChild(name);
+		product.appendChild(image);
+		product.appendChild(price);
+	});
+	//clear search box
+	inp.value = '';
+}
+
+function removeProducts() {
+	if (mydiv) {
+		while (mydiv.firstChild) {
+			mydiv.firstChild.remove();
+		}
+	}
+}
+
+function searchCases(value) {
+	//----- making some miss typing cases work
+	//first case
+	if (value === "lipliner" || value === "lip liner") {
+		value = "lip_liner";
+	}
+	//other cases ... need to work on..
+	return value;
+}
 
 search();
-
-//end
-// product.setAttribute('class', 'products');
-// btn_search.addEventListener("click", searchproduct);
-//
-// function searchproduct() {
-// 	//var productName = search_bar.value;
-// 	var data = []
-// 	const result = () => {
-// 		url = '/search/' + search_bar.value;
-//     console.log(url)
-// 		return fetch(url)
-//     .then((response) => {
-// 			if (response.status == 200) {
-// 				return response.json();
-// 			} else {
-// 				alert('Connection Error , status Code : ' + response.status);
-// 			}
-// 		})
-//     .then((data) => {
-// 				for (var i = 0; i < data.length; i++) {
-//
-// 					var createresult = function (data) {
-// 						//start add product:
-// 						var product = document.createElement('div');
-// 						product.setAttribute('class', 'product');
-// 						var brand = document.createElement('h1');
-// 						brand.setAttribute('class', 'div-hd1');
-// 						brand.innerText = data[i].brand;
-// 						var name = document.createElement('h2');
-// 						name.setAttribute('class', 'div-hd2');
-// 						name.innerText = data[i].name;
-// 						var image = document.createElement('img');
-// 						image.setAttribute('class', 'product-img');
-// 						image.src = data[i].image_link;
-// 						var price = document.createElement('h5');
-// 						price.setAttribute('class', 'div-hd5');
-// 						price.innerText = data[i].price + data[i].price_sign;
-// 						product.appendChild(brand);
-// 						product.appendChild(name);
-// 						product.appendChild(image);
-// 						product.appendChild(price);
-// 						products.appendChild(product);
-// 					};
-// 				});
-// 		};
-// 	};
-//   //formProduct.reset();
-// };
