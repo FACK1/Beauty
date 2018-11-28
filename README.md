@@ -25,7 +25,15 @@ Beauty : An application to show all Makeup products to users, allows users to se
   - package.json
 
 # API : 
-  our Api get information about Makeup products , product brand, name, price, image to it and other information from this website [MakeupAPI](http://makeup-api.herokuapp.com/api/v1/products) . 
+  our Api get information about **Makeup products** , product **brand**, **name**, **price**, **image** to it and other information from this website [MakeupAPI](http://makeup-api.herokuapp.com/api/v1/products) .
+ 
+# How to run our site on your machine?
+1- git clone this repo **(https://github.com/FACK1/Beauty.git)**
+2- Open your **command line**.
+3- Put in terminal : **npm install** .
+4- Then put in terminal : **npm run nodemon**  to run the server.
+5- Open your browser and put in terminal: **localhost:3000**.
+
 # Team_Member:
   - Hadeel Slamin
   - Razan Tayem
