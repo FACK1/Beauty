@@ -14,7 +14,7 @@ header{
 }
 
 .title-hd{
-  font-size:40px;
+  font-size:45px;
   font-family: 'Tangerine', cursive;
   color:#CF4182;
   margin-top: 15px;
@@ -23,14 +23,14 @@ header{
 
 .sub-title-hd{
   font-family: 'Raleway', sans-serif;
-  font-size: 16px;
+  font-size:20px;
   color:#7C3354;
   margin-top: 15px;
   width:100%;
 }
 
 .beauty-img{
-  width:40%;
+  width:45%;
   display: block;
   margin:auto;
   margin-top: 15px;
@@ -107,4 +107,77 @@ header{
 .product-img {
   width:100px;
   height:120px;
+}
+
+.search-hd {
+  border-bottom: #EC4C94 solid 2px;
+  height:30px;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+}
+
+/*===============================*/
+/*Media queries => min 650px;*/
+/*===============================*/
+
+@media only screen and (min-width: 600px) {
+
+
+    *{
+      margin:0;
+      padding:0;
+    }
+
+    body {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+
+    }
+
+    header {
+      width:50%;
+      display: inline-block;
+    }
+
+    .container {
+      width:40%;
+
+    }
+
+    .container-div {
+      display: inline-block;
+    }
+
+    .search-hd {
+      border-bottom: #EC4C94 solid 2px;
+      height:30px;
+      font-weight: bold;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .title-hd{
+      font-size:55px;
+      font-family: 'Tangerine', cursive;
+      color:#CF4182;
+      margin-top: 15px;
+      width:100%;
+    }
+
+    .sub-title-hd{
+      font-family: 'Raleway', sans-serif;
+      font-size:24px;
+      color:#7C3354;
+      margin-top: 15px;
+      width:100%;
+    }
+
+    .beauty-img{
+      width:45%;
+      display: block;
+      margin:auto;
+      margin-top: 15px;
+      /* padding:20px; */
+    }
 }
