@@ -63,17 +63,17 @@ const searchHandler = (request, response) => {
 
   requester.get(product_url, (err, res, body) => {
       var data  = JSON.parse(body)
-      var filteredData = data.splice(0,5);
+      var filteredData = data.splice(0,6);
       var result = filteredData.map(obj =>{
       return  {
           "brand": obj.brand,
           "name": obj.name,
-          "image": obj.image_link,
+          "image": (obj.image_link).split('?')[0],
           "price": obj.price,
           "currency": obj.price_sign
         }
   })
-
+console.log(result)
 var convertedData = JSON.stringify(result);
 response.writeHead(200, {"Content-Type": "application/json"});
 response.end(convertedData);
