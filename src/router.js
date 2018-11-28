@@ -6,12 +6,15 @@ console.log(pathname)
 	if (pathname === '/' ) {
 		handler.homeHandler(request,response);
 	}
+	else if (pathname.includes('.')) {
+  	handler.publicHandler(request,response);
+	}
 	else if (pathname.includes('/search/')) {
 		handler.searchHandler(request,response);
 	}
 	else
 	{
-		handler.publicHandler(request,response);
+		handler.notFoundHandler(request,response);
 	}
 }
 module.exports=router;

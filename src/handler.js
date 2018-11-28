@@ -1,14 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 const querystring = require('querystring');
-const search = require('./search');
+const requestModule = require('./search');
 
 const homeHandler = (request, response) => {
   const htmlPath = path.join(__dirname, '..', 'public', 'index.html');
   fs.readFile(htmlPath, (error, file) => {
     if (error) {
-      response.writeHead(404, { 'Content-Type': 'text/html' });
-      response.end('<h1>Page Not Found</h1><p>Error Code 404</p>');
+      notFoundHandler(request, response);
       return;
     }
     response.writeHead(200, { 'Content-Type': 'text/html' });
@@ -28,8 +27,7 @@ const publicHandler = (request, response) => {
   };
 
   if (ContentTypeMapping[extention] === undefined) {
-    response.writeHead(404, { 'Content-Type': 'text/html' });
-    response.end('<h1>Page Not Found</h1><p>Error Code 404211</p>');
+    notFoundHandler(request, response);
     return;
   }
 
@@ -47,18 +45,21 @@ const publicHandler = (request, response) => {
 const searchHandler = (request, response) => {
   const value = request.url.split('/')[2];
   if (value === undefined) {
-    response.writeHead(404, { 'Content-Type': 'text/plain' });
+    response.writeHead(404, { 'Content-Type': 'text/plain' }); // we need to handle the error input
     response.end('error');
   } else {
-    const result = search(value);
+    const result = requestModule(value);
     const convertedData = JSON.stringify(result);
     console.log({ result });
 
     console.log({ convertedData });
-    response.writeHead(200, { 'Content-Type': 'application/json' });
-    // response.write();
-    response.end(convertedData);
+    // response.writeHead(200, { 'Content-Type': 'application/json' });
+    // response.end(convertedData);
   }
 };
 
-module.exports = { homeHandler, publicHandler, searchHandler };
+const notFoundHandler = (request, response) => {
+  response.writeHead(404)
+  return response.end('Page not found!')
+}
+module.exports = { homeHandler, publicHandler, searchHandler, notFoundHandler};
