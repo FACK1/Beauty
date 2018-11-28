@@ -1,7 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 const querystring = require('querystring');
-const requestModule = require('./search');
+const requestModule = require('./request.js');
+const requester = require('request');
+const search = require('./search.js');
+
+//-----------------------------------------------------------------------------
 
 const homeHandler = (request, response) => {
   const htmlPath = path.join(__dirname, '..', 'public', 'index.html');
@@ -14,6 +18,8 @@ const homeHandler = (request, response) => {
     response.end(file);
   });
 };
+
+//-----------------------------------------------------------------------------
 
 const publicHandler = (request, response) => {
   const extention = request.url.split('.')[1];
@@ -42,20 +48,41 @@ const publicHandler = (request, response) => {
     response.end(file);
   });
 };
+
+//-----------------------------------------------------------------------------
+
 const searchHandler = (request, response) => {
-  const value = request.url.split('/')[2];
+  var value = request.url.split('/')[2];
   if (value === undefined) {
     response.writeHead(404, { 'Content-Type': 'text/plain' }); // we need to handle the error input
     response.end('error');
   } else {
-    // const result = requestModule(value);
-    // const convertedData = JSON.stringify(String(result));
-    // response.writeHead(200, { 'Content-Type': 'application/json' });
-    // response.end(result);
-    // console.log("this",result)
 
-  }
-};
+  const product_url =
+  `http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${value}`
+
+  requester.get(product_url, (err, res, body) => {
+      var data  = JSON.parse(body)
+      var filteredData = data.splice(0,5);
+      var result = filteredData.map(obj =>{
+      return  {
+          "brand": obj.brand,
+          "name": obj.name,
+          "image": obj.image_link,
+          "price": obj.price,
+          "currency": obj.price_sign
+        }
+  })
+
+var convertedData = JSON.stringify(result);
+response.writeHead(200, {"Content-Type": "application/json"});
+response.end(convertedData);
+
+      })
+}
+    }
+
+//-----------------------------------------------------------------------------
 
 const notFoundHandler = (request, response) => {
   response.writeHead(404)
