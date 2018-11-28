@@ -13,15 +13,15 @@ header{
   /* padding:20px; */
 }
 
-h1{
+.title-hd{
   font-size:40px;
-  font-family: 'Tangerine', cursive;;
+  font-family: 'Tangerine', cursive;
   color:#CF4182;
   margin-top: 15px;
   width:100%;
 }
 
-h2{
+.sub-title-hd{
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
   color:#7C3354;
@@ -68,4 +68,43 @@ h2{
   padding:10px;
   font-weight: bold;
   font-family: 'Raleway', sans-serif;
+}
+
+/*header ends here =============================================*/
+
+/*section starts here ========================================= */
+
+.container {
+  width:100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  margin-top: 25px;
+}
+
+.container-div {
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+  width:40%;
+  margin: 2%;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  border:#7C3354 3px solid;
+  padding: 5px;
+}
+
+.div-hd1 {
+  font-size: 20px;
+  color:#7C3354;
+}
+
+.div-hd2 {
+  font-size: 16px;
+  color:#EC4C94;
+}
+
+.product-img {
+  width:100px;
+  height:120px;
 }
