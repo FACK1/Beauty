@@ -23,6 +23,7 @@ Beauty : An application to show all Makeup products to users, allows users to se
     - search.js
     - test.js
   - package.json
+  
 
 # API : 
   our Api get information about **Makeup products** , product **brand**, **name**, **price**, **image** to it and other information from this website [MakeupAPI](http://makeup-api.herokuapp.com/api/v1/products) .
@@ -33,6 +34,14 @@ Beauty : An application to show all Makeup products to users, allows users to se
 3- Put in terminal : **npm install** .
 4- Then put in terminal : **npm run nodemon**  to run the server.
 5- Open your browser and put in terminal: **localhost:3000**.
+
+# Test coverage
+![screenshot from 2018-11-29 09-56-50](https://user-images.githubusercontent.com/41734542/49207319-3fd39700-f3bd-11e8-96d3-1804eb8dd222.png)
+
+# CI Test
+[![Build Status](https://travis-ci.org/FACK1/Beauty.svg?branch=master)](https://travis-ci.org/FACK1/Beauty)
+
+
 
 # Team_Member:
   - Hadeel Slamin
