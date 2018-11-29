@@ -55,7 +55,6 @@ tape('Testing tape', (t) => {
 tape('check status code is 200', (t) => {
 	supertest(router)
 		.get('/')
-		.expect(200)
 		.expect('Content-Type', /html/)
 		.end((err, res) => {
 			t.error(err);
