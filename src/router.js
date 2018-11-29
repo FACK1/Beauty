@@ -1,20 +1,17 @@
-const handler = require('./handler');
 const url = require('url');
-const router =(request,response)=>{
-const {pathname} = url.parse(request.url)
-console.log(pathname)
-	if (pathname === '/' ) {
-		handler.homeHandler(request,response);
+const handler = require('./handler');
+
+const router = (request, response) => {
+	const { pathname } = url.parse(request.url);
+
+	if (pathname === '/') {
+		handler.homeHandler(request, response);
+	} else if (pathname.includes('.')) {
+		handler.publicHandler(request, response);
+	} else if (pathname.includes('/search/')) {
+		handler.searchHandler(request, response);
+	} else {
+		handler.notFoundHandler(request, response);
 	}
-	else if (pathname.includes('.')) {
-  	handler.publicHandler(request,response);
-	}
-	else if (pathname.includes('/search/')) {
-		handler.searchHandler(request,response);
-	}
-	else
-	{
-		handler.notFoundHandler(request,response);
-	}
-}
-module.exports=router;
+};
+module.exports = router;
