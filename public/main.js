@@ -1,6 +1,6 @@
 var inp = document.getElementById("search-bar");
 var btn_search = document.getElementById('btn-search');
-var mydiv = document.getElementById("test");
+var productContainer = document.getElementById("productContainer");
 
 function search() {
 	btn_search.addEventListener("click", function (e) {
@@ -44,7 +44,7 @@ function viewProducts(array) {
 
 		var product = document.createElement('div');
 		product.setAttribute('class', 'container-div');
-		mydiv.appendChild(product);
+		productContainer.appendChild(product);
 		var brand = document.createElement('h1');
 		brand.setAttribute('class', 'div-hd1');
 		brand.innerText = element.brand;
@@ -68,9 +68,9 @@ function viewProducts(array) {
 }
 
 function removeProducts() {
-	if (mydiv) {
-		while (mydiv.firstChild) {
-			mydiv.firstChild.remove();
+	if (productContainer) {
+		while (productContainer.firstChild) {
+			productContainer.firstChild.remove();
 		}
 	}
 }
