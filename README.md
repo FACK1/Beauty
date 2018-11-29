@@ -1,5 +1,5 @@
 
-# Beauty
+# Beauty 💄
 Beauty : An application to show all Makeup products to users, allows users to search any products they want and display its information .
 
 ![screenshot from 2018-11-29 10-04-03](https://user-images.githubusercontent.com/41734542/49207628-2717b100-f3be-11e8-8ca9-0d1cb886f583.png)
@@ -28,7 +28,7 @@ Beauty : An application to show all Makeup products to users, allows users to se
   
 
 # API : 
-  our Api get information about **Makeup products** , product **brand**, **name**, **price**, **image** to it and other information from this website [MakeupAPI](http://makeup-api.herokuapp.com/api/v1/products) .
+  our Api get information about **Makeup products** 💄 , product **brand**, **name**, **price**, **image** to it and other information from this website [MakeupAPI](http://makeup-api.herokuapp.com/api/v1/products) .
  
 # How to run our site on your machine?
 1- git clone this repo **(https://github.com/FACK1/Beauty.git)**
